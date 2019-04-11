@@ -12,9 +12,6 @@
 输出: 5
 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
       注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
-
-
-先计算每两天之间的利润，得到一个n-1的数组，然后计算最大子数组的和
 """
 
 
@@ -24,6 +21,8 @@ class Solution:
     def maxProfit1(arr):
         """
         买卖股票的最佳时机1
+
+        动态规划，再最便宜的时候买入，最贵的时候卖出
         :type arr: object
         """
         minbuy = arr[0]
@@ -37,19 +36,21 @@ class Solution:
     def maxProfit2(arr):
         """
         买卖股票的最佳时机1
+
+        先计算每两天之间的利润，得到一个n-1的数组，然后计算最大子数组的和
         :type arr: object
         """
         list = []
-        for i in range(len(arr)-1):
-            list.append(arr[i+1]-arr[i])
+        for i in range(len(arr) - 1):
+            list.append(arr[i + 1] - arr[i])
         res = 0
         mid = 0
         for i in range(len(list)):
-            if mid+list[i]>0:
-                mid+=list[i]
+            if mid + list[i] > 0:
+                mid += list[i]
             else:
                 mid = 0
-            res = max(res,mid)
+            res = max(res, mid)
         return res
 
 if __name__ == '__main__':
