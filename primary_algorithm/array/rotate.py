@@ -21,6 +21,8 @@ class Solution:
         :type arr: object
         """
         newk = k % len(arr)
+        print(arr[-newk:])
+        print(arr[:-newk])
         arr[:] = arr[-newk:] + arr[:-newk]
         return arr
 

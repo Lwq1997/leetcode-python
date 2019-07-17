@@ -28,6 +28,8 @@ class Solution:
         说明该数字没有重复，需要放到l的下一位置，并使number加1。
         :type arr: object
         """
+        if len(arr) == 0 :
+            return 0
         j = 0
         for i in range(len(arr)):
             if arr[j] != arr[i]:
