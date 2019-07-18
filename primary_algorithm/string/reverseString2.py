@@ -18,7 +18,7 @@
 class Solution:
 
     @staticmethod
-    def reverseString(s,k):
+    def reverseString(s, k):
         """
         字符串反转
 
@@ -27,6 +27,10 @@ class Solution:
         """
         res = ''
         for i in range(0, len(s), 2 * k):
+            print(i)
+            print(s[i:i + k])
+            print(s[i:i + k][::-1])     #前k反转
+            print(s[i + k:i + 2 * k])       #后k不反转
             res = res + s[i:i + k][::-1] + s[i + k:i + 2 * k]
         return res
 

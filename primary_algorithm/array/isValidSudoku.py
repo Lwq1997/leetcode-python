@@ -65,11 +65,16 @@ class Solution:
         """
         # init data
         rows = [[] for i in range(9)]
+        print(rows)
         columns = [[] for i in range(9)]
+        print(columns)
         boxes = [[] for i in range(9)]
+        print(boxes)
 
         # validate a board
         for i, row in enumerate(board):
+            print(i)
+            print(row)
             for j, num in enumerate(row):
                 if num != '.':
                     k = (i // 3) * 3 + j // 3   # 利用地板除，向下取余。巧妙地将矩阵划分为九块
@@ -78,6 +83,9 @@ class Solution:
                     rows[i].append(num)
                     columns[j].append(num)
                     boxes[k].append(num)
+        print(rows)
+        print(columns)
+        print(boxes)
         return True
 
 
