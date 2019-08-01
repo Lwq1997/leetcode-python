@@ -59,3 +59,19 @@ class Solution:
         leftDepth = self.minDepth(root.left) + 1
         rightDepth = self.minDepth(root.right) + 1
         return min(leftDepth, rightDepth)
+
+
+if __name__ == '__main__':
+    a = TreeNode(3)
+    b = TreeNode(9)
+    c = TreeNode(20)
+    d = TreeNode(15)
+    e = TreeNode(7)
+
+    a.left = b
+    a.right = c
+    c.left = d
+    c.right = e
+
+    print(Solution().maxDepth(a))
+    print(Solution().minDepth(a))
