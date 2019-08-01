@@ -64,6 +64,7 @@ class Solution:
                 return True
         return False
 
+
 if __name__ == '__main__':
     utility = ListUtility()
     a = ListNode(1)
