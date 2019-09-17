@@ -64,6 +64,9 @@ class Solution:
 
         return self.validBST(root.left, small, root.val) and self.validBST(root.right, root.val, large)
 
+    """
+    中序遍历后查看链表是不是有序的
+    """
     def isValidBST01(self, root: TreeNode) -> bool:
         res = []
         self.search(root, res)
